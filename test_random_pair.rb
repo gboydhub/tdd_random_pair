@@ -7,7 +7,7 @@ class TestRandomPair < Minitest::Test
   end
 
   def test_random_pair_returning_array
-    assert_equal(Array, random_pair([], []))
+    assert_equal(Array, random_pair([], []).class)
   end
   
 end
