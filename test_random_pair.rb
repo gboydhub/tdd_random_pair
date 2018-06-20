@@ -13,5 +13,9 @@ class TestRandomPair < Minitest::Test
   def test_random_pair_returning_nested_array
     assert_equal(Array, random_pair([], [])[0].class)
   end
+
+  def test_random_pair_fails_invalid_arguments
+    assert_equal(false, random_pair(1, {}))
+  end
   
 end
