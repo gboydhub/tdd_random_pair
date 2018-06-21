@@ -14,12 +14,8 @@ class TestRandomPair < Minitest::Test
     assert_equal(Array, random_pair(['asd'])[0].class)
   end
 
-  def test_random_pair_fails_invalid_arguments
+  def test_random_pair_fails_invalid_argument
     assert_equal(false, random_pair({}))
-  end
-
-  def test_random_pair_fails_single_invalid_argument
-    assert_equal(false, random_pair('s'))
   end
 
   def test_passing_invalid_array_type
