@@ -17,5 +17,9 @@ class TestRandomPair < Minitest::Test
   def test_random_pair_fails_invalid_arguments
     assert_equal(false, random_pair(1, {}))
   end
+
+  def test_random_pair_fails_single_invalid_argument
+    assert_equal(false, random_pair([], "s"))
+  end
   
 end
