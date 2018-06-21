@@ -29,5 +29,10 @@ class TestRandomPair < Minitest::Test
   def test_random_pair_returns_split_string
     assert_equal(['Steve', 'Jobs'], random_pair(['Steve Jobs'])[0])
   end
+
+  def test_random_pair_split_multiple
+    namelist = ['Steve Jobs', 'Steve Wozniak']
+    assert_equal('Steve', random_pair(namelist)[1][0])
+  end
   
 end
