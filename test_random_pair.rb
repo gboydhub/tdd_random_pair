@@ -1,5 +1,5 @@
-require "minitest/autorun"
-require_relative "random_pair.rb"
+require 'minitest/autorun'
+require_relative 'random_pair.rb'
 
 class TestRandomPair < Minitest::Test
   def test_assert_1_equals_1
@@ -27,7 +27,7 @@ class TestRandomPair < Minitest::Test
   end
 
   def test_random_pair_returns_split_string
-    assert_equal(["Steve", "Jobs"], random_pair(["Steve Jobs"]))
+    assert_equal(['Steve', 'Jobs'], random_pair(['Steve Jobs'])[0])
   end
   
 end
