@@ -34,5 +34,10 @@ class TestRandomPair < Minitest::Test
     namelist = ['Steve Jobs', 'Steve Wozniak']
     assert_equal('Steve', random_pair(namelist)[1][0])
   end
+
+  def test_random_pair_shuffles_names
+    namelist = ['Jason Vorhees', 'Bill Gates', 'Tony Tiger', 'Rumple Stiltskin', 'Obi-Wan Kenobi']
+    refute_equal(random_pair(namelist), random_pair(namelist))
+  end
   
 end

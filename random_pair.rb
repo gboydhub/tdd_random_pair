@@ -6,7 +6,6 @@ def random_pair(name_array)
   name_array.each do |v|
     name = v.split(' ')
     namelist.push([name[0], name[1]])
-    p name
   end
   namelist
 end
