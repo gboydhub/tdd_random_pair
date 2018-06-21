@@ -3,9 +3,19 @@ def random_pair(name_array)
   unless name_array[0].is_a?(String); return false; end
 
   namelist = Array.new(0){Array.new(0)}
+  firstnames = Array.new(0)
+  lastnames = Array.new(0)
+
   name_array.each do |v|
     name = v.split(' ')
-    namelist.push([name[0], name[1]])
+    firstnames << name[0]
+    lastnames << name[1]
+  end
+  firstnames = firstnames.shuffle
+  lastnames = lastnames.shuffle
+
+  lastnames.each_with_index do |v, i|
+    namelist << [firstnames[i], v]
   end
   namelist
 end
