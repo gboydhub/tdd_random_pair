@@ -7,11 +7,11 @@ class TestRandomPair < Minitest::Test
   end
 
   def test_random_pair_returning_array
-    assert_equal(Array, random_pair(['']).class)
+    assert_equal(Array, random_pair(['asd']).class)
   end
 
   def test_random_pair_returning_nested_array
-    assert_equal(Array, random_pair([''])[0].class)
+    assert_equal(Array, random_pair(['asd'])[0].class)
   end
 
   def test_random_pair_fails_invalid_arguments
@@ -40,4 +40,10 @@ class TestRandomPair < Minitest::Test
     refute_equal(random_pair(namelist), random_pair(namelist))
   end
   
+  def test_random_pair_handles_single_names
+    namelist = ['Jason Vorhees', 'Bill Gates', 'Tony Tiger', 'Rumple Stiltskin', 'Obi-Wan Kenobi', 'Shaq', 'Queen']
+    refute_equal(random_pair(namelist), random_pair(namelist))
+    assert_equal(false, random_pair(namelist).include?(nil))
+    p random_pair(namelist)
+  end
 end

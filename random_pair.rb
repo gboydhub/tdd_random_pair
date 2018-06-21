@@ -9,11 +9,14 @@ def random_pair(name_array)
   name_array.each do |v|
     name = v.split(' ')
     firstnames << name[0]
-    lastnames << name[1]
+    if name.length > 1; lastnames << name[1]; end
   end
   firstnames = firstnames.shuffle
   lastnames = lastnames.shuffle
 
+  if lastnames.length == 0
+    namelist << [firstnames[0], '']
+  end
   lastnames.each_with_index do |v, i|
     namelist << [firstnames[i], v]
   end
