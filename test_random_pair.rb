@@ -25,5 +25,9 @@ class TestRandomPair < Minitest::Test
   def test_passing_invalid_array_type
     assert_equal(false, random_pair([2, 3]))
   end
+
+  def test_random_pair_returns_split_string
+    assert_equal(["Steve", "Jobs"], random_pair(["Steve Jobs"]))
+  end
   
 end
