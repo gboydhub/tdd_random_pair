@@ -37,9 +37,10 @@ class TestRandomPair < Minitest::Test
   end
   
   def test_random_pair_handles_single_names
-    namelist = ['Jason Vorhees', 'Bill Gates', 'Tony Tiger', 'Rumple Stiltskin', 'Obi-Wan Kenobi', 'Shaq', 'Queen']
+    namelist = ['Jason Vorhees', 'Bill Gates', 'Tony Tiger', 'Rumple Stiltskin', 'Obi-Wan Kenobi', 'Shaq', 'Queen', 'Lucifer']
     refute_equal(random_pair(namelist), random_pair(namelist))
     assert_equal(false, random_pair(namelist).include?(nil))
+    p namelist
     p random_pair(namelist)
   end
 end

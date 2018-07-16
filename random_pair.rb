@@ -20,11 +20,19 @@ def random_pair(name_array)
   lastnames = lastnames.shuffle
 
   # Generate split namelist
-  if lastnames.length == 0
-    namelist << [firstnames[0], '']
-  end
   lastnames.each_with_index do |v, i|
     namelist << [firstnames[i], v]
+  end
+
+  ln_counter = lastnames.length
+  while ln_counter < firstnames.length do
+    if ln_counter+1 < firstnames.length
+      namelist << [firstnames[ln_counter], firstnames[ln_counter+1]]
+      ln_counter += 2
+    else
+      namelist << [firstnames[ln_counter]]
+      ln_counter += 1
+    end
   end
   namelist
 end
